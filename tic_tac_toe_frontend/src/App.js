@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Button } from './components';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -41,6 +42,15 @@ function App() {
         >
           Learn React
         </a>
+
+        <div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <Button onClick={() => {}} aria-label="Primary demo button">Primary</Button>
+          <Button variant="secondary" onClick={() => {}} aria-label="Secondary demo button">Secondary</Button>
+          <Button variant="success" onClick={() => {}} aria-label="Success demo button" startIcon={<span aria-hidden="true">✓</span>}>
+            Success
+          </Button>
+          <Button loading aria-label="Loading demo button">Loading</Button>
+        </div>
       </header>
     </div>
   );

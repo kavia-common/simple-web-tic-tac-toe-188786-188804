@@ -1,0 +1,126 @@
+.root {
+  --primary: #3b82f6;   /* primary */
+  --secondary: #64748b; /* secondary */
+  --success: #06b6d4;   /* success */
+  --text: #111827;      /* base text */
+  --surface: #ffffff;   /* light surface */
+  --ring: rgba(59, 130, 246, 0.4);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.05s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* Sizes */
+.sm {
+  font-size: 0.875rem; /* 14px */
+  padding: 0.4rem 0.75rem;
+  min-height: 2rem;
+}
+.md {
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  min-height: 2.5rem;
+}
+.lg {
+  font-size: 1.125rem; /* 18px */
+  padding: 0.8rem 1.25rem;
+  min-height: 3rem;
+}
+
+/* Variants */
+.primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+.primary:hover:not(.disabled) {
+  filter: brightness(0.95);
+}
+.primary:active:not(.disabled) {
+  transform: translateY(1px);
+}
+.primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.secondary {
+  background-color: #e5e7eb; /* gray-200 */
+  color: var(--text);
+  border-color: #e5e7eb;
+}
+.secondary:hover:not(.disabled) {
+  background-color: #d1d5db; /* gray-300 */
+  border-color: #d1d5db;
+}
+.secondary:active:not(.disabled) {
+  transform: translateY(1px);
+}
+.secondary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(100, 116, 139, 0.35);
+}
+
+.success {
+  background-color: var(--success);
+  color: #07260f;
+}
+.success:hover:not(.disabled) {
+  filter: brightness(0.95);
+}
+.success:active:not(.disabled) {
+  transform: translateY(1px);
+}
+.success:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.35);
+}
+
+/* Full width */
+.fullWidth {
+  display: inline-flex;
+  width: 100%;
+}
+
+/* Disabled */
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  filter: none;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.spinnerDark {
+  border: 2px solid rgba(17, 24, 39, 0.25);
+  border-top-color: rgba(17, 24, 39, 0.9);
+}
+
+.icon {
+  display: inline-flex;
+  line-height: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
